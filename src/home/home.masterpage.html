@@ -1,0 +1,42 @@
+<style>
+    .navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 2.5rem;
+    padding-left: 1.5rem;
+    font-size: 20px;
+}
+.navbar-brand{
+    font-size: 25px;
+}
+</style>
+<div>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-success">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <a class="navbar-brand" href="#">Demo App</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a [routerLink]="['home']" class="nav-link" href="#">Home Page   <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['registration']" class="nav-link" href="#"> User Registration</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a [routerLink]="['profile']" class="nav-link" href="#"> User Profile</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+</div>
+
+
+
+
+
+<div>
+    <router-outlet>
+
+    </router-outlet>
+</div>

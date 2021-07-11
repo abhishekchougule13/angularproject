@@ -1,0 +1,107 @@
+
+<div  class="min">
+    <br><br><br><br>
+<div class="container">
+    <form [formGroup]="formCustomerGroup" (ngSubmit)="onformsubmit()">
+
+        <div class="row">
+            <div class="col-25">
+                <label for="fname"> First name </label>
+            </div>
+            <div class="col-75">
+                <input type="text" id='fname' placeholder="Enter Your First Name "formControlName="CustomerName">
+               
+                <div *ngIf="formCustomerGroup.get('CustomerName') && isSubmitted">
+                    <div *ngIf="formCustomerGroup.get('CustomerName')?.hasError('required')">
+                        <span style="color: red;">Please Enter User Name</span>
+                    </div>
+                    <div *ngIf="formCustomerGroup.get('CustomerName')?.hasError('pattern')">
+                        <span style="color: red;">numbers are not allowed <br>
+                             length should not exceed more than 20 characters  </span>
+                    </div>
+                   
+                </div>
+                   
+            </div>
+            
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-25">
+                <label for="lname"> Last name </label>
+            </div>
+            <div class="col-75">
+                <input type="text" id='lname' placeholder="Enter Your last name ">
+            </div>
+        </div>
+        <br>
+      
+        <div class="row">
+            <div class="col-25">
+                <label for="country"> Country </label>
+            </div>
+            <div class="col-75">
+                <select id='country' name='country'>
+                    <option value="aus">IND</option>
+                    <option value="ind">USA</option>
+                    <option value="aus">OTHER</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-25">
+                <label for="dob"> Date of Birth </label>
+            </div>
+            <div class="col-75">
+
+                <input type="date" id="birthday" name="birthday">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="dob"> Select Address </label>
+            </div>
+            <div class="col-75">
+
+                    <select class="js-select2" name="service">
+                        <option>Home Address</option>
+                        <option>Company Address</option>
+                        
+                    </select>
+                    <br> <br>
+                    <textarea class="input100" name="message" placeholder="Enter your Address"></textarea>
+                    <div class="dropDownSelect2"></div>
+          
+
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="dob"> Select your photo</label>
+                </div>
+                <div class="col-75">
+    
+                    <img class="rounded circle" [src]="urllink">
+                    <input type="file" class="btn btn-success btn-sm" (change)="selectFiles($event)">
+    
+                </div>
+            </div>
+            
+        </div>
+
+        
+<br>
+        
+
+        <div class="row">
+            <input type="submit" class="btn btn-sm btn-info" value="submit">
+        </div>
+
+        
+
+    </form>
+
+</div>
+</div>
